@@ -4,9 +4,9 @@ using UnityEngine;
 using TMPro;
 
 
-public class NewBehaviourScript : MonoBehaviour
+public class ScoreDisplaer : MonoBehaviour
 {
-    [SerializeField]  TMP_Text _score;
+    [SerializeField] TMP_Text _score;
     [SerializeField] private PlayerBag _playerBag;
 
     private void OnEnable()

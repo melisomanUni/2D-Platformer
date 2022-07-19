@@ -7,7 +7,7 @@ public class OpponentsAnimation : MonoBehaviour
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     private bool _isForward;
-    //[SerializeField] private Transform _point1;
+    [SerializeField] private Transform _point;
 
     private void Awake()
     {
@@ -16,25 +16,25 @@ public class OpponentsAnimation : MonoBehaviour
 
     }
 
-    //private void Update()
-    //{
-    //        Flip();
-    //}
+    private void Update()
+    {
+        Flip();
+    }
 
-    //private void Flip()
-    //{
-    //    var dir = transform.position - _point1.position;
+    private void Flip()
+    {
+        var dir = transform.position - _point.position;
 
-    //    if (dir.x < 0.0f)
-    //    {
-    //        _spriteRenderer.flipX = true;
-    //        _isForward = true;
-    //    }
-    //    else
-    //    {
-    //        _spriteRenderer.flipX = false;
-    //        _isForward = false;
-    //    }
-    //}
+        if (dir.x < 0.0f)
+        {
+            _spriteRenderer.flipX = true;
+            _isForward = true;
+        }
+        else
+        {
+            _spriteRenderer.flipX = false;
+            _isForward = false;
+        }
+    }
 
 }
