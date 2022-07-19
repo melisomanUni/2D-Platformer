@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class OpponentsAnimation : MonoBehaviour
 {
     private Animator _animator;
@@ -13,28 +15,11 @@ public class OpponentsAnimation : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-
     }
+  
 
-    private void Update()
+    public void Flip(bool isFlipped)
     {
-        Flip();
+            _spriteRenderer.flipX = isFlipped;
     }
-
-    private void Flip()
-    {
-        var dir = transform.position - _point.position;
-
-        if (dir.x < 0.0f)
-        {
-            _spriteRenderer.flipX = true;
-            _isForward = true;
-        }
-        else
-        {
-            _spriteRenderer.flipX = false;
-            _isForward = false;
-        }
-    }
-
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class OpponentRun : MonoBehaviour
 {
+    [SerializeField] private OpponentsAnimation _animation;
     [SerializeField] private Transform _path;
     [SerializeField] private float _speed;
     private Transform[] _points;
@@ -21,13 +22,16 @@ public class OpponentRun : MonoBehaviour
 
     private void Update()
     {
-        Transform target =_points[_currentPoint];
+        Transform target = _points[_currentPoint];
 
-      transform.position =  Vector3.MoveTowards(transform.position, target.position, _speed*Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, target.position, _speed * Time.deltaTime);
+
+        _animation.Flip(transform.position.x - target.position.x > 0);
+
         if (transform.position == target.position)
         {
             _currentPoint++;
-            if (_currentPoint >=_points.Length)
+            if (_currentPoint >= _points.Length)
             {
                 _currentPoint = 0;
             }
