@@ -18,7 +18,6 @@ public class PlayerAnimation : MonoBehaviour
     private void FixedUpdate()
     {
         _animator.SetBool("isMoving", IsMoving);
-
     }
 
     public void Flip(bool flip)
