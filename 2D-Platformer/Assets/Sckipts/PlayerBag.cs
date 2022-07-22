@@ -7,7 +7,6 @@ using UnityEngine.Events;
 public class PlayerBag : MonoBehaviour
 {
     private int _countCoint;
-
     public event UnityAction<int> CoinCollected;
 
     private void OnCollisionEnter2D(Collision2D collision)

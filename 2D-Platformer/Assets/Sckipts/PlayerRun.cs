@@ -16,7 +16,7 @@ public class PlayerRun : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private float _input;
     private bool _isMoving;
-    private bool _isGrounded= true;
+    private bool _isGrounded = true;
 
     private void Start()
     {
@@ -28,7 +28,7 @@ public class PlayerRun : MonoBehaviour
         Move();
         CheckGround();
 
-        if (Input.GetKeyDown(KeyCode.Space)&& _isGrounded == true)
+        if (Input.GetKeyDown(KeyCode.Space) && _isGrounded == true)
         {
             Jump();
         }
