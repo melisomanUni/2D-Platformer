@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
+    private const string isMoving = "isMoving";
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
 
@@ -17,7 +18,7 @@ public class PlayerAnimation : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _animator.SetBool("isMoving", IsMoving);
+        _animator.SetBool(isMoving, IsMoving);
     }
 
     public void Flip(bool flip)

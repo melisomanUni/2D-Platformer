@@ -6,7 +6,7 @@ using TMPro;
 
 public class ScoreDisplaer : MonoBehaviour
 {
-    [SerializeField] TMP_Text _score;
+    [SerializeField] private TMP_Text _score;
     [SerializeField] private PlayerBag _playerBag;
 
     private void OnEnable()
